@@ -1,5 +1,5 @@
 # wikipedia-latex
-[Get the latest version from here.]()
+[Get the latest version from here.](https://github.com/SebastianAigner/wikipedia-latex/blob/master/wikipedia-latex.js)
 
 
 ![Wikipedia LaTeX example](https://cloud.githubusercontent.com/assets/2178959/15872638/b92e3876-2cfa-11e6-95b0-c03f89733c9f.png)
