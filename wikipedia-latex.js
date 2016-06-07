@@ -35,6 +35,9 @@ $(document).ready(function () {
 }
 `);
     var elements = $('span > math > semantics > annotation');
+    if(elements === null) {
+        return;
+    }
     elements.each(function () {
         var p = $(this).parent().parent().parent().parent();
         var str = $(this).text();
@@ -60,5 +63,3 @@ function addGlobalStyle(css) {
     style.innerHTML = css;
     head.appendChild(style);
 }
-
-
