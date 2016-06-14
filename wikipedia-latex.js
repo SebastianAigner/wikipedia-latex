@@ -19,11 +19,11 @@ $(document).ready(function () {
      margin-left: 4px;
 }
 
-.sebi_io_latex_tooltip p {
+.sebi_io_latex_tooltip textarea {
      display: none;
 }
 
-.sebi_io_latex_tooltip_open p {
+.sebi_io_latex_tooltip_open textarea {
      display: inline-block;
 }
 
@@ -34,16 +34,17 @@ $(document).ready(function () {
      display: inline-block;
 }
 `);
-    var elements = $('span > math > semantics > annotation');
+    var elements = $('annotation', 'semantics', 'math');
     if(elements === null) {
         return;
     }
     elements.each(function () {
-        var p = $(this).parent().parent().parent().parent();
+        var p = $(this).parents().eq(3);
         var str = $(this).text();
         str = str.substring(14, str.length - 1);
+        str = $.trim(str);
         if (str.length > 2) {
-            p.append("<div class='sebi_io_latex_tooltip'><img src='https://cloud.githubusercontent.com/assets/2178959/15872148/41aad162-2cf8-11e6-9ba6-ba16493db779.png'></img> <p>" + str + "</p></div>");
+            p.append("<div class='sebi_io_latex_tooltip'><img src='https://cloud.githubusercontent.com/assets/2178959/15872148/41aad162-2cf8-11e6-9ba6-ba16493db779.png'></img> <textarea>" + str + "</textarea></div>");
         }
     });
     $('.sebi_io_latex_tooltip > img').click(function () {
